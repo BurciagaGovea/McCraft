@@ -36,7 +36,13 @@ Ingredient.init(
     is_active:{ 
         type: DataTypes.BOOLEAN, 
         defaultValue: true 
-    }
+    },
+    
+    category:{ 
+        type: DataTypes.ENUM('bread','patties','dressing','vegetables','toppings'), 
+        allowNull: true 
+      },
+  
 
   },
   { sequelize }
