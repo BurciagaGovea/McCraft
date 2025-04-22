@@ -3,7 +3,7 @@ import { authenticate_token } from '../middlewares/token_auth.js';
 
 
 import { get_client_by_id, get_clients } from '../controllers/controllers_clients.js';
-import { get_addresses, delete_address, update_address, create_address } from '../controllers/controllers_address.js';
+import { get_addresses, delete_address, update_address, create_address, get_address_by_id } from '../controllers/controllers_address.js';
 import { create_client, delete_client, update_client } from '../controllers/controllers_clients.js';
 
 
@@ -28,6 +28,7 @@ router.delete('/delete/:id', authenticate_token, delete_client);
 //_____________________________Addresses ___________________________
 
 router.get('/addresses', get_addresses);
+router.get('/addresses/:id', get_address_by_id)
 
 router.post('/address/create', create_address);
 router.put('/address/update/:id',update_address);

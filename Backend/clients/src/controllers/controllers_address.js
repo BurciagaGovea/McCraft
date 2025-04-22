@@ -17,6 +17,25 @@ export const get_addresses = async (req, res, next) =>{
 
 //_______________________________________________________-
 
+export const get_address_by_id = async (req, res, next) => {
+
+    try {
+
+      const { id } = req.params;
+
+      const address = await address_functions.get_address_by_id(id);
+
+      res.status(200).json(address);
+
+    } catch (err) {
+
+      next(err);
+    }
+  };
+
+
+//_______________________________________________________
+
 
 export const create_address = async (req, res, next) =>{
 

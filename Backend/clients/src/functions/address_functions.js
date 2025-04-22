@@ -31,6 +31,37 @@ const address_functions= {
 
     //__________________________________________________________
 
+    async get_address_by_id(client_id_add){
+
+        client_id_add = +client_id_add
+
+        try{
+
+            
+            const address = await Address.findOne({ where: { client_id: client_id_add } })
+            
+
+            if(!address){
+
+                throw new Error(`The address with client id: ${client_id_add} doesn't exist ~_~`)
+            }
+
+            return address;
+
+        }catch(error){
+
+            console.log("there was an error getting the address ~_~");
+
+            throw error
+        }
+    },
+
+
+
+
+
+    //_____________________________
+
     async create_address(address_data){
 
         try{
