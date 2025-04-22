@@ -67,7 +67,7 @@ User.init(
         },
 
         role: {
-            type: DataTypes.ENUM('client','chef','admin'),
+            type: DataTypes.ENUM('client','chef','admin','super_admin','store','cashier'),
             allowNull: false,
             defaultValue: 'client'    // ← DEFAULT
         },

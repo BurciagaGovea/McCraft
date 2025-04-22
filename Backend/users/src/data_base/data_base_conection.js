@@ -36,7 +36,7 @@ const connect = async ()=>{
     //__________________sincronize tables__________________________
     
     try{
-        await sequelize.sync();
+        await sequelize.sync({alter: true});
         console.log("The models are sincronized 0_0 ")
     }catch(error){
         console.log("Sequielize sync failed ~_~: ", error)

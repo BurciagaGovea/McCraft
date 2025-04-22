@@ -235,7 +235,7 @@ const user_functions= {
           role: login_user.role,
         },
         login_key,
-        {expiresIn: '12h'}
+        {expiresIn: '365d'}
         );
 
         return {token};
